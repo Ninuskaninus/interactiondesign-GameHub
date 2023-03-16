@@ -154,64 +154,47 @@ const games = [
     },
 ]
 
+const gameId = new URLSearchParams(window.location.search).get("id");
+const selectedGame = games.find(game => game.id === gameId);
 
+const heroBuyGame = document.querySelector(".heroBuyGames");
+heroBuyGame.style.backgroundImage = `url(${selectedGame.largePicture})`;
+heroBuyGame.style.backgroundSize = "cover";
+heroBuyGame.style.backgroundPosition = "top";
 
-const gamesContainer = document.querySelector(".gamesGrid1");
-let numDisplayed = 6;
+const buyContainerGridItem = document.querySelector(".buyContainerGridItem");
+const buyGameName = document.querySelector("#gamename");
+buyGameName.textContent = selectedGame.name;
 
-for (let i=0; i < numDisplayed; i++){
-    const game = games[i];
+const gridItemCategories = document.querySelector(".gridItemCategories");
+selectedGame.categories.forEach(category => {
+    const categoryItem = document.createElement("p");
+    categoryItem.classList.add("buttonChategory");
+    categoryItem.textContent = category;
+    gridItemCategories.appendChild(categoryItem);
+});
 
-    const gameItem = document.createElement("div");
-    gameItem.classList.add("gamesItem");
+const itemGrid = document.querySelector(".itemGrid");
+const itemImg = document.querySelector(".previewImg");
+itemImg.classList.add("previewImg")
+itemImg.src = selectedGame.smallPicture;
+itemImg.alt = selectedGame.name;
 
-    const gameImg = document.createElement("img");
-    gameImg.classList.add("gamesImg");
-    gameImg.src = game.largePicture;
-    gameImg.alt = game.name;
+const itemText = document.querySelector(".itemText");
+const priceBuy = document.querySelector("#gamePrice");
+priceBuy.textContent = "$" + selectedGame.price;
 
-    const gameInfo = document.createElement("div");
-    gameInfo.classList.add("gamesInfo");
+const buyText = document.querySelector(".buyDescription");
+buyText.textContent = selectedGame.description;
 
-    const gameYear = document.createElement("p");
-    gameYear.classList.add("gamesYear");
-    gameYear.textContent = game.year;
+const itemConsole = document.querySelector(".itemConsole");
+selectedGame.consoles.forEach((console) => {
+    const consoleItem = document.createElement("p");
+    consoleItem.classList.add("buttonChategory");
+    consoleItem.textContent = console;
+    itemConsole.appendChild(consoleItem);
+});
 
-    const gameName = document.createElement("p");
-    gameName.classList.add("gamesName");
-    gameName.textContent = game.name;
-
-    const gamePrice = document.createElement("p");
-    gamePrice.classList.add("gamesPrice");
-    gamePrice.textContent = "$" + game.price;
-
-    const gameCategoryBtn = document.createElement("p");
-    gameCategoryBtn.classList.add("buttonChategory");
-    gameCategoryBtn.textContent = game.categories;
-
-    gameItem.addEventListener("click", function() {
-        window.location.href = "gamepreview.html?id=" + game.id;
-    });
-    
-    gameInfo.appendChild(gameYear);
-    gameInfo.appendChild(gameName);
-    gameInfo.appendChild(gamePrice);
-    gameInfo.appendChild(gameCategoryBtn);
-
-    gameItem.appendChild(gameImg);
-    gameItem.appendChild(gameInfo);
-
-    gamesContainer.appendChild(gameItem);
-};
-
-const heroIndex = document.querySelector(".heroContainer");
-const gameName = document.querySelector("#gameName");
-gameName.textContent = games[0].name;
-const gameDes = document.querySelector(".heroText");
-gameDes.textContent = games[0].description;
-const gamePriceBtn = document.querySelector(".button2");
-gamePriceBtn.textContent = "Buy for" + " " + "$" + games[0].price;
-gamePriceBtn.href = "gamepreview.html?id=forgelegend";
 
 
 

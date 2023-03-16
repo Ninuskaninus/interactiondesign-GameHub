@@ -7,11 +7,24 @@
     --light-pink: #E7BCFF;
     --white: white;
     --montserrat: font-family: 'Montserrat', sans-serif;
-   
+}
+
+.logoImg{
+    max-width: 150px;
+    position: fixed;
+    z-index: 100;
+    right: 0;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
 }
 
 h3{
     font-weight: 400;
+}
+
+#overGames{
+    margin-left: 290px;
 }
 
 h4{
@@ -57,7 +70,31 @@ h4{
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
     position: relative;
+    margin-right: 30px
+    
 }
+
+.button2:hover{
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.5);
+}
+
+.button3{
+    background-color: transparent;
+    border-style: solid;
+    border-color: var(--light-pink);
+    border-radius: 10px;
+    padding: 20px;
+    color: var(--light-pink);
+    width: 200px;
+    font-size: 1.2em;
+}
+
+.button3:hover{
+    background-color: var(--light-pink);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
 
 .navMenu1{
     margin-top: 50px;
@@ -130,7 +167,8 @@ main{
     width: 250px;
     height: 100vh;
     position: fixed;
-    padding:0px
+    padding:0px;
+    z-index: 100;
     
 }
 
@@ -153,6 +191,33 @@ main{
     left: 90px;
     top: 60px;
 }
+
+footer{
+    height: 100px;
+    background-color: var(--secondary-color);
+    position: relative;
+    bottom: 0;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+footer a{
+    color: var(--light-pink);
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 50px;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+/*INDEX*/
 
 .heroIndex {
     width: 100%;
@@ -188,7 +253,7 @@ main{
     transform: scale(1.1); 
     opacity: 0; 
     animation: fadeIn 2s ease forwards, zoomIn 2s ease forwards;
-    z-index: 0; /* Set z-index to 0 to position it behind the ::before pseudo-element */
+    z-index: 0; 
   }
 
   @keyframes fadeIn {
@@ -214,16 +279,18 @@ main{
     z-index: 2;
     margin-left: 100px;
     bottom: 0;
-    padding-bottom: 100px
+    margin-bottom: 50px;
+    
 }
 
 .heroChategory{
     display: flex;
     flex-direction: row;
+    margin-bottom: 40px;
 }
 
 .buttonChategory{
-    width: auto;
+    width: fit-content;
     color: var(--bright-pink);
     background-color: transparent;
     border-style: solid;
@@ -231,6 +298,8 @@ main{
     padding: 10px;
     border-radius: 20px;
     margin-right: 10px;
+    margin-bottom: 20px;
+    font-weight: 300;
 }
 
 .heroText{
@@ -271,4 +340,370 @@ main{
 
 .searchBar:focus{
     outline-color: var(--light-pink);
+}
+
+.gamesContainer{
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.gamesGrid1{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gamesItem{
+    background-color: var(--secondary-color);
+    width: 350px;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    cursor: pointer;
+}
+
+.gamesItem:hover{
+    background: rgb(43,28,51);
+    background: linear-gradient(180deg, rgba(43,28,51,1) 60%, rgba(186,73,248,0.4906337535014006) 100%);
+    
+}
+
+.gamesImg{
+    border-radius: 20px 20px 0px 0px;
+    object-fit: cover;
+    height: 50%;
+    width: 350px;
+}
+
+.gamesYear{
+    color: var(--light-pink);
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+.gamesName{
+    font-size: 1.8em;
+    font-weight: 500;
+    margin-top: -5px;
+}
+
+.gamesInfo{
+    padding: 10px;
+    width: 90%;
+}
+
+.gamesPrice{
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--light-pink);
+    margin-top: -5px;
+}
+
+.seeMoreBtn {
+    background-color: transparent;
+    color: var(--light-pink);
+    text-decoration: none;
+    border-style: none;
+    margin-top: 50px;
+    font-weight: 300;
+    display: flex;
+    align-self: center;
+}
+
+.seeMoreBtn:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*GAMES*/
+
+.heroGames {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden; 
+    margin-bottom: 100px;
+  }
+  
+  .heroGames::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    opacity: 0.4;
+    z-index: 1; 
+  }
+  
+  .heroGames::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("https://www.linkpicture.com/q/wp8263778-fae-wallpapers.jpg");
+    background-size: cover;
+    background-position: 0px -100px;
+    transform: scale(1.1); 
+    opacity: 0; 
+    animation: fadeIn 2s ease forwards, zoomIn 2s ease forwards;
+    z-index: 0; 
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  
+.heroContainer{
+    position: absolute;
+    z-index: 2;
+    margin-left: 100px;
+    bottom: 0;
+    padding-bottom: 100px
+}
+
+.gamesGrid2{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    justify-content: center;
+}
+
+/*PREVIEW*/
+.heroPreview {
+    width: 100%;
+    height: 600px;
+    position: relative;
+    overflow: hidden; 
+    object-fit: cover;
+  }
+  
+  .heroPreview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4); 
+    animation-fill-mode: forwards;
+    animation-delay: 2s;
+    opacity: 0.4;
+    z-index: 1; 
+  }
+  
+  .heroPreview::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("");
+    background-size: cover;
+    background-position: top;
+    transform: scale(1.1); 
+    opacity: 0; 
+    animation: fadeIn 2s ease forwards, zoomIn 2s ease forwards;
+    z-index: 0; 
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+
+.heroContainer{
+    position: absolute;
+    z-index: 2;
+    margin-left: 100px;
+    bottom: 0;
+    padding-bottom: 10px;
+    
+}
+
+.heroChategory{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.buttonChategory{
+    width: fit-content;
+    color: var(--light-pink);
+    background-color: transparent;
+    border-style: solid;
+    border-width: 2px;
+    border-color: var(--bright-pink);
+    padding: 10px;
+    border-radius: 20px;
+    margin-right: 10px;
+    font-weight: 300;
+}
+
+.heroText{
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.previewImg{
+    max-width: 300px;
+}
+
+.container{
+    margin-top: 100px;
+}
+
+.containerGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    width: fit-content;
+}
+
+.containerText{
+    width: 500px;
+}
+
+.containerBtn{
+    margin-top: 50px;
+}
+
+.containerBtn1{
+    display: flex;
+    flex-direction: row;
+}
+
+/*BUY GAME*/
+
+.heroBuyGames {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    overflow: hidden; 
+    margin-bottom: 50px;
+  }
+
+.buyContainer{
+    display: flex;
+    height: 100%;
+    padding-left: 100px;
+}
+
+.buyContainerGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 100px;
+}
+
+.gridItemCategories{
+    display: flex;
+    flex-direction: row;
+    margin-top: -25px;
+}
+
+.itemGrid{
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    margin-top: 50px;
+}
+
+.itemConsole{
+    display: flex;
+    flex-direction: row;
+}
+
+#dark{
+    background-color: var(--secondary-color);
+    width: 450px;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.buyForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.buyForm label{
+    margin-bottom: 10px;
+}
+
+.buyForm input{
+    background-color: var(--main-color);
+    padding: 10px;
+    width: 100%;
+    border-style: none;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    color: var(--light-pink);
+    
+}
+.buyForm input:focus{
+    outline-color: var(--light-pink);
+}
+
+.buyForm input::placeholder{
+    color: var(gray);
+}
+
+input[type="date"]::placeholder{
+    color: gray;
+}
+
+.buyButtonContainer{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buyDescription{
+    width: 400px;
 }

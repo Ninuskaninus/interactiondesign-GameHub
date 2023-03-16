@@ -100,7 +100,7 @@ const games = [
     {
         name: "Assassin",
         year: 2010,
-        smallPicture: smallpictures[4],
+        smallPicture: smallpictures[0],
         largePicture: largePicture[0],
         price: 99.99,
         description: "As you explore the forest, you’ll encounter mystical forges that allow you to create legendary weapons of immense power. These weapons are not only incredibly powerful, but also carry a piece of your own story, imbued with your triumphs and defeats. Each time you wield one of these weapons, you’ll feel the weight of your own legend.",
@@ -154,12 +154,10 @@ const games = [
     },
 ]
 
+const gamesContainer = document.querySelector(".gamesGrid2");
+let numDisplayed = 3;
 
-
-const gamesContainer = document.querySelector(".gamesGrid1");
-let numDisplayed = 6;
-
-for (let i=0; i < numDisplayed; i++){
+for (let i=0; i < games.length; i++){
     const game = games[i];
 
     const gameItem = document.createElement("div");
@@ -204,14 +202,19 @@ for (let i=0; i < numDisplayed; i++){
     gamesContainer.appendChild(gameItem);
 };
 
-const heroIndex = document.querySelector(".heroContainer");
-const gameName = document.querySelector("#gameName");
-gameName.textContent = games[0].name;
-const gameDes = document.querySelector(".heroText");
-gameDes.textContent = games[0].description;
-const gamePriceBtn = document.querySelector(".button2");
-gamePriceBtn.textContent = "Buy for" + " " + "$" + games[0].price;
-gamePriceBtn.href = "gamepreview.html?id=forgelegend";
+const heroContainer = document.querySelector(".heroContainer");
+for (let i=0; i < games.length; i++){
+    const game = games[i];
+
+const heroHeading = document.querySelector("#heroHeading");
+heroHeading.textContent = games[0].name;
+
+const heroBtn = document.querySelector(".button2");
+heroBtn.textContent = "Buy for" + " " + "$" + games[0].price;
+heroBtn.href = "gamepreview.html?id=forgelegend";
+
+};
+
 
 
 
