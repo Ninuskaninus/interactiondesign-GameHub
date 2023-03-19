@@ -43,6 +43,21 @@ selectedGame.consoles.forEach((console) => {
     itemConsole.appendChild(consoleItem);
 });
 
+const buyContainer = document.querySelector(".buyButtonContainer");
+const buyBtn = document.querySelector(".button3");
+
+buyBtn.addEventListener("click", function(){
+    const popup = document.createElement("div");
+    popup.classList.add("popupBuy");
+    popup.innerHTML = "<p>Thank you for your purchase!</p>";
+    buyContainer.appendChild(popup);
+
+    setTimeout(function(){
+        popup.remove();
+        window.location.href = "index.html";
+    }, 3000);
+});
+
 
 
 

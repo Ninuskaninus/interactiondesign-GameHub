@@ -48,3 +48,19 @@ for (let i=0; i < numDisplayed; i++){
     gamesContainer.appendChild(gameItem);
 };
 
+const searchInput = document.getElementById("search");
+const form = document.querySelector(".searchForm");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); 
+
+  const searchTerm = searchInput.value.toLowerCase();
+  const matchingGame = games.find((game) =>
+    game.name.toLowerCase().includes(searchTerm)
+  );
+
+  if (matchingGame) {
+    const gameId = matchingGame.id;
+    window.location.href = `gamepreview.html?id=${gameId}`;
+  }
+});

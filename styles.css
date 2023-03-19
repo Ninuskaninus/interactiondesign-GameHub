@@ -64,6 +64,8 @@ h5{
     background-color: var(--main-color);
 }
 
+
+
 .button2{
     background-color: var(--bright-pink);
     width: 200px;
@@ -112,6 +114,29 @@ h5{
     background-color: var(--light-pink);
     color: var(--secondary-color);
     cursor: pointer;
+}
+
+.button4{
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    text-decoration: none;
+    border-color: var(--bright-pink);
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 2px;
+    width: 150px;
+    height: 50px;
+    padding: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.button4:hover{
+    border: none;
+    background-color: var(--main-color);
 }
 
 
@@ -738,6 +763,7 @@ input[type="date"]::placeholder{
 .buyButtonContainer{
     align-items: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     margin-top: 20px;
 }
@@ -746,6 +772,18 @@ input[type="date"]::placeholder{
     align-items: left;
     justify-content: left;
     
+}
+
+.popupBuy{
+    display: block;
+    background-color: var(--bright-pink);
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 800;
+
+
 }
 
 .buyDescription{
@@ -868,6 +906,95 @@ input[type="date"]::placeholder{
 }
 
 
+/*ABOUT*/
+.aboutContainer{
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutContent{
+    background-color: var(--secondary-color);
+    padding: 50px;
+    width: 50%;
+    border-radius: 20px;
+}
+
+#aboutHeading {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.aboutText{
+    font-weight: 300;
+    line-height: 25px;
+}
+
+.aboutBtnContainer{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+/*CONTACT*/
+
+#grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 50px;
+    padding: 50px;
+}
+
+.contactForm{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.contactForm form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.contactForm label{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+.contactForm input{
+    outline-color: var(--light-pink);
+    background-color: var(--secondary-color);
+    height: 10px;
+    padding: 10px;
+    border-color: var(--light-pink);
+    border-radius: 10px;
+    border-style: solid;
+    color: var(--white);
+}
+
+.contactForm textarea{
+    outline-color: var(--light-pink);
+    background-color: var(--secondary-color);
+    height: auto;
+    padding: 10px;
+    border-color: var(--light-pink);
+    border-radius: 10px;
+    border-style: solid;
+    color: var(--white);
+}
+
+#grid1{
+    width: 100%;
+}
+
+
+
+
 @media screen and (max-width: 1280px) {
     .gamesGrid1{
         grid-template-columns: auto auto auto;
@@ -885,6 +1012,14 @@ input[type="date"]::placeholder{
     .sellgameGrid{
         grid-template-columns: 0;
         grid-template-rows: auto auto;
+    }
+
+    .aboutContainer{
+        padding: 20px;
+    }
+
+    .aboutContent{
+        width: 80%;
     }
 }
 
@@ -924,6 +1059,22 @@ input[type="date"]::placeholder{
     .buttonChategory{
         min-width: max-content;
     }
+
+    #grid{
+        grid-template-columns: 0;
+        grid-template-rows: auto auto;
+        width: 100%;
+    }
+
+    #grid1{
+        width: 500px;
+    }
+
+    .contactForm{
+        width: 500px;
+    }
+
+
 
     
 }
@@ -979,6 +1130,31 @@ input[type="date"]::placeholder{
     .profileGrid{
         grid-template-columns: 0;
         grid-template-rows: auto auto;
+    }
+
+    .aboutContent{
+        width: 380px;
+        padding: 20px;
+    }
+
+    #grid1{
+        width: 250px;
+    }
+
+    .contactForm{
+        width: 250px;
+    }
+
+    .aboutText{
+        width: 350px;
+    }
+
+    #aboutHeading{
+        text-align: left;
+    }
+
+    .logoImg{
+        width: 100px;
     }
 }
 
