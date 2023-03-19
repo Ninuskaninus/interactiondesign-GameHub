@@ -1,9 +1,9 @@
 import { games } from "./gamelist.js";
 
 const gamesContainer = document.querySelector(".gamesGrid2");
-let numDisplayed = 3;
+let numDisplayed = 4;
 
-for (let i=0; i < games.length; i++){
+for (let i=0; i < numDisplayed; i++){
     const game = games[i];
 
     const gameItem = document.createElement("div");
@@ -27,7 +27,7 @@ for (let i=0; i < games.length; i++){
 
     const gamePrice = document.createElement("p");
     gamePrice.classList.add("gamesPrice");
-    gamePrice.textContent = "$" + game.price;
+    gamePrice.textContent = "Owned game";
 
     const gameCategoryBtn = document.createElement("p");
     gameCategoryBtn.classList.add("buttonChategory");
@@ -47,41 +47,4 @@ for (let i=0; i < games.length; i++){
 
     gamesContainer.appendChild(gameItem);
 };
-
-const heroContainer = document.querySelector(".heroContainer");
-for (let i=0; i < games.length; i++){
-    const game = games[i];
-
-const heroHeading = document.querySelector("#heroHeading");
-heroHeading.textContent = games[0].name;
-
-const heroBtn = document.querySelector(".button2");
-heroBtn.textContent = "Buy for" + " " + "$" + games[0].price;
-heroBtn.href = "gamepreview.html?id=forgelegend";
-
-};
-
-const searchInput = document.getElementById("search");
-const form = document.querySelector(".searchForm");
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault(); 
-
-  const searchTerm = searchInput.value.toLowerCase();
-  const matchingGame = games.find((game) =>
-    game.name.toLowerCase().includes(searchTerm)
-  );
-
-  if (matchingGame) {
-    const gameId = matchingGame.id;
-    window.location.href = `gamepreview.html?id=${gameId}`;
-  }
-});
-
-
-
-
-
-
-
 

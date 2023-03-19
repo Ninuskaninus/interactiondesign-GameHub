@@ -1,9 +1,9 @@
-import { games } from "./gamelist.js";
+import {games} from "./gamelist.js";
 
-const gamesContainer = document.querySelector(".gamesGrid2");
-let numDisplayed = 3;
+const gamesContainer = document.querySelector(".gamesGrid1");
+let numDisplayed = 6;
 
-for (let i=0; i < games.length; i++){
+for (let i=0; i < numDisplayed; i++){
     const game = games[i];
 
     const gameItem = document.createElement("div");
@@ -29,9 +29,13 @@ for (let i=0; i < games.length; i++){
     gamePrice.classList.add("gamesPrice");
     gamePrice.textContent = "$" + game.price;
 
+    
     const gameCategoryBtn = document.createElement("p");
     gameCategoryBtn.classList.add("buttonChategory");
     gameCategoryBtn.textContent = game.categories;
+    
+    
+
 
     gameItem.addEventListener("click", function() {
         window.location.href = "gamepreview.html?id=" + game.id;
@@ -44,22 +48,19 @@ for (let i=0; i < games.length; i++){
 
     gameItem.appendChild(gameImg);
     gameItem.appendChild(gameInfo);
+    
 
     gamesContainer.appendChild(gameItem);
 };
 
-const heroContainer = document.querySelector(".heroContainer");
-for (let i=0; i < games.length; i++){
-    const game = games[i];
-
-const heroHeading = document.querySelector("#heroHeading");
-heroHeading.textContent = games[0].name;
-
-const heroBtn = document.querySelector(".button2");
-heroBtn.textContent = "Buy for" + " " + "$" + games[0].price;
-heroBtn.href = "gamepreview.html?id=forgelegend";
-
-};
+const heroIndex = document.querySelector(".heroContainer");
+const gameName = document.querySelector("#gameName");
+gameName.textContent = games[0].name;
+const gameDes = document.querySelector(".heroText");
+gameDes.textContent = games[0].description;
+const gamePriceBtn = document.querySelector(".button2");
+gamePriceBtn.textContent = "Buy for" + " " + "$" + games[0].price;
+gamePriceBtn.href = "gamepreview.html?id=forgelegend";
 
 const searchInput = document.getElementById("search");
 const form = document.querySelector(".searchForm");
@@ -77,11 +78,5 @@ form.addEventListener("submit", (event) => {
     window.location.href = `gamepreview.html?id=${gameId}`;
   }
 });
-
-
-
-
-
-
 
 

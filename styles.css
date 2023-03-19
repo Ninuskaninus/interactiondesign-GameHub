@@ -21,10 +21,11 @@
 
 h3{
     font-weight: 400;
+    font-size: 1em;
 }
 
 #overGames{
-    margin-left: 290px;
+    margin-left: 5%;
 }
 
 h4{
@@ -32,6 +33,12 @@ h4{
     font-size: 1em;
     text-align: center;
     padding-top: 5px;
+}
+
+h5{
+    color: var(--bright-pink);
+    font-size: 2em;
+    margin-top: -10px;
 }
 
 .button1{
@@ -46,7 +53,7 @@ h4{
     border-radius: 10px;
     border-width: 2px;
     width: 150px;
-    height: 50px;
+    height: 25px;
     padding: 10px;
     position: absolute;
     bottom: 50px;
@@ -70,8 +77,20 @@ h4{
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
     position: relative;
-    margin-right: 30px
-    
+    margin-right: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.popup{
+    display: none;
+}
+
+
+
+#sellBtn{
+    justify-content: center;
+    align-items: center;
 }
 
 .button2:hover{
@@ -97,13 +116,14 @@ h4{
 
 
 .navMenu1{
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .menuItem a{
     text-decoration: none;
     color: var(--white);
     font-weight: 200;
+    font-size: 100%;
 }
 
 .menuItem{
@@ -165,19 +185,19 @@ main{
 .mainNav{
     background-color: var(--secondary-color);
     width: 250px;
-    height: 100vh;
+    height: 100%;
     position: fixed;
     padding:0px;
     z-index: 100;
-    
 }
+
 
 .profileBoxNav{
     background-color: var(--bright-pink);
     padding: 10px;
-    margin: 100px 20px 20px 20px;
+    margin: 50px 20px 0px 20px;
     border-radius: 20px;
-    max-height: 120px;
+    max-height: 100px;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
 }
 
@@ -189,7 +209,7 @@ main{
     max-width: 70px;
     position: absolute;
     left: 90px;
-    top: 60px;
+    top: 10px;
 }
 
 footer{
@@ -200,7 +220,6 @@ footer{
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-    
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -216,6 +235,8 @@ footer a{
 footer a:hover{
     text-decoration: underline;
 }
+
+
 
 /*INDEX*/
 
@@ -352,18 +373,18 @@ footer a:hover{
 
 .gamesGrid1{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     gap: 20px;
     justify-content: center;
+    width: 100%;
 }
 
 .gamesItem{
     background-color: var(--secondary-color);
-    width: 350px;
     border-radius: 20px 20px 20px 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
     height: 400px;
     cursor: pointer;
 }
@@ -377,8 +398,8 @@ footer a:hover{
 .gamesImg{
     border-radius: 20px 20px 0px 0px;
     object-fit: cover;
-    height: 50%;
-    width: 350px;
+    min-height: 200px;
+    width: 300px;
 }
 
 .gamesYear{
@@ -390,8 +411,10 @@ footer a:hover{
 .gamesName{
     font-size: 1.8em;
     font-weight: 500;
-    margin-top: -5px;
+    margin-top: -5px; 
 }
+
+
 
 .gamesInfo{
     padding: 10px;
@@ -489,9 +512,22 @@ footer a:hover{
 
 .gamesGrid2{
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     gap: 20px;
     justify-content: center;
+}
+
+.gamesGrid3{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    justify-content: left;
+    margin-left: 200px;
+}
+
+.title{
+    margin-left: 200px;
+    margin-top: 50px;
 }
 
 /*PREVIEW*/
@@ -633,12 +669,14 @@ footer a:hover{
     display: flex;
     height: 100%;
     padding-left: 100px;
+    
 }
 
 .buyContainerGrid{
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 100px;
+    background-color: #1B1220;
 }
 
 .gridItemCategories{
@@ -704,6 +742,243 @@ input[type="date"]::placeholder{
     margin-top: 20px;
 }
 
+.buyButtonContainer2{
+    align-items: left;
+    justify-content: left;
+    
+}
+
 .buyDescription{
     width: 400px;
 }
+
+/*PROFILE*/
+
+.profilePicture{
+    border-radius: 100%;
+    width: 150px;
+    
+}
+
+.profileHero{
+    padding: 50px;
+    display: flex;
+    justify-content: left;
+    margin-left: 250px;
+}
+
+.profileGrid{
+    display: grid;
+    grid-template-columns: 200px auto;
+    width: 40%;
+}
+
+.profileName{
+    text-justify: left;
+    
+}
+
+/*SELL A GAME*/
+
+.sellGameContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+    justify-content: left;
+}
+
+.sellGameForm{
+    display: flex;
+    flex-direction: column;
+}
+
+.sellGameForm input{
+    background-color: var(--secondary-color);
+    width: 500px;
+    height: auto;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: var(--white);
+    padding: 10px;
+}
+
+.sellGameForm textarea{
+    background-color: var(--secondary-color);
+    width: 500px;
+    min-height: 100px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: var(--white);
+    padding: 10px;
+}
+
+.gamesDescription{
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+
+.addBtn{
+    width: fit-content;
+    padding: 20px;
+    background-color: var(--light-pink);
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.sellGameForm input:focus{
+    outline-color: var(--light-pink);
+}
+
+.sellGameForm textarea:focus{
+    outline-color: var(--light-pink);
+}
+
+#image{
+    background-color: transparent;
+}
+
+.sellgameGrid{
+    display: grid;
+    grid-template-columns: 700px auto;
+    grid-gap: 20px;
+}
+
+.previewItem{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    padding: 50px;
+    border-radius: 20px;
+    width: 500px;
+    height: auto;
+}
+
+.previewInformation{
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-gap: 20px;
+}
+
+.sellGameForm{
+    padding: 50px;
+    width: 500px;
+}
+
+
+@media screen and (max-width: 1280px) {
+    .gamesGrid1{
+        grid-template-columns: auto auto auto;
+    }
+
+    .gamesGrid2{
+        grid-template-columns:  auto auto auto;
+    }
+    
+    .buyContainerGrid{
+        grid-template-columns: 0;
+        grid-template-rows: auto auto;
+        row-gap: 50px;
+    }
+    .sellgameGrid{
+        grid-template-columns: 0;
+        grid-template-rows: auto auto;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .mainNav{
+        display: none;
+    }
+
+    .title{
+        margin-left: 70px;
+    }
+
+    .profileHero{
+        margin-left: 70px;
+    }
+
+    main{
+        margin: 0;
+    }
+
+    .gamesGrid1{
+        grid-template-columns: auto auto;
+    }
+
+    .gamesGrid2{
+        grid-template-columns: auto auto;
+    }
+
+    .previewImg{
+        width: 200px;
+    }
+
+    .containerText{
+        width: 300px;
+    }
+    
+    .buttonChategory{
+        min-width: max-content;
+    }
+
+    
+}
+
+@media screen and (max-width: 414px) {
+    .heroText{
+        display: none;
+    }
+
+    #heroTitle{
+        display: none;
+    }
+
+    .gamesGrid1{
+        grid-template-columns: auto;
+    }
+
+    .gamesGrid2{
+        grid-template-columns: auto;
+    }
+
+    footer a{
+        font-size: 0.8em;
+        margin-left: 5px;
+    }
+
+    .containerGrid{
+        grid-template-columns: 0;
+        grid-template-rows: auto;
+    }
+
+    .containerBtn{
+        width: 400px;
+    }
+
+    .itemGrid{
+        grid-template-columns: 0px;
+        grid-template-rows: auto;
+    }
+
+    .buyDescription{
+        width: 300px;
+    }
+
+    .buyContainer{
+        padding: 40px;
+    }
+
+    #dark{
+        width: 250px;
+    }
+
+    .profileGrid{
+        grid-template-columns: 0;
+        grid-template-rows: auto auto;
+    }
+}
+
