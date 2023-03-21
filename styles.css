@@ -253,7 +253,8 @@ h5{
 }
 
 .menuItem:hover{
-    background-color: var(--bright-pink);
+    background-color: var(--main-color);
+   
 }
 
 .navBoxGrid{
@@ -268,11 +269,12 @@ h5{
 
 .navBoxGridText{
     font-weight: 500;
+    color: var(--main-color);
 }
 
 .navBoxGridTitle{
     color: var(--main-color);
-    font-weight: 100;
+    font-weight: 500;
     font-size: 0.8em;
 }
 
@@ -314,6 +316,10 @@ main{
     border-radius: 20px;
     max-height: 100px;
     box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.5);
+}
+
+.username{
+    font-weight: 500;
 }
 
 .navProfile{
