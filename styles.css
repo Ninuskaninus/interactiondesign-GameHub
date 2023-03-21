@@ -320,7 +320,11 @@ main{
 
 .username{
     font-weight: 500;
-    color: var(--secondary-color);
+    color: var(--main-color);
+}
+
+.searchLabel{
+    display: none;
 }
 
 .navProfile{
