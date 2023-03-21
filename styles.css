@@ -320,6 +320,7 @@ main{
 
 .username{
     font-weight: 500;
+    color: var(--secondary-color);
 }
 
 .navProfile{
