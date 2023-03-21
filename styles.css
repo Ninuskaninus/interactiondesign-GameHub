@@ -183,6 +183,8 @@ h5{
 #sellBtn{
     justify-content: center;
     align-items: center;
+    font-weight: 500;
+    color: var(--main-color);
 }
 
 .button2:hover{
