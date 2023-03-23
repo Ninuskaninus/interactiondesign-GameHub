@@ -1280,5 +1280,44 @@ input[type="date"]::placeholder{
     .logoImg{
         width: 100px;
     }
+
+    .sellGameContainer{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .sellgameGrid{
+        margin: 0;
+        padding: 10px;
+        width: 400px;
+    }
+
+    .sellGameForm{
+        padding: 20px;
+    }
+
+    .sellGameForm input{
+    width: 300px;
+    }
+
+    .sellGameForm textarea{
+    width: 300px;
+    
+}
+
+   .previewImg{
+    display: none;
+   }
+
+   .previewItem{
+    width: 250px;
+    padding: 50px;
+   }
+
+   .heroGames::after {
+    background-position: 0;
+   }
+
 }
 
